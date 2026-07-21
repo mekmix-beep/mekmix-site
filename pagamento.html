@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Condições de Pagamento — MekMix Serigrafia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--rosa:#E31787;--roxo:#772583;--roxo-dark:#5A1B66;--off-white:#F8F6FB;--cinza:#EDE8F5;--texto:#1A1A2E;--texto2:#5A5880;}
+body{font-family:'Inter',sans-serif;color:var(--texto);background:#fff;line-height:1.7;}
+header{background:linear-gradient(135deg,var(--roxo-dark),var(--roxo));padding:40px 24px;text-align:center;}
+header h1{font-family:'Playfair Display',serif;color:#fff;font-size:clamp(24px,4vw,36px);font-weight:700;}
+header p{color:rgba(255,255,255,0.75);font-size:14px;margin-top:8px;}
+.voltar{display:inline-block;margin:24px auto 0;text-align:center;}
+.voltar a{color:rgba(255,255,255,0.85);text-decoration:none;font-size:13px;border:1px solid rgba(255,255,255,0.3);padding:8px 18px;border-radius:100px;transition:all .2s;}
+.voltar a:hover{background:rgba(255,255,255,0.15);}
+main{max-width:760px;margin:0 auto;padding:48px 24px 80px;}
+h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--roxo);margin:36px 0 14px;}
+h2:first-child{margin-top:0;}
+p{margin-bottom:14px;font-size:15px;color:var(--texto2);}
+ul{margin:0 0 14px 20px;}
+li{margin-bottom:8px;font-size:15px;color:var(--texto2);}
+strong{color:var(--texto);}
+.atualizacao{background:var(--off-white);border-left:3px solid var(--rosa);padding:14px 18px;border-radius:8px;font-size:13px;color:var(--texto2);margin-bottom:32px;}
+
+.split-visual{display:flex;gap:12px;margin:24px 0;}
+.split-item{flex:1;border-radius:16px;padding:24px 20px;text-align:center;}
+.split-item.entrada{background:linear-gradient(135deg,rgba(119,37,131,0.08),rgba(119,37,131,0.04));border:1px solid rgba(119,37,131,0.15);}
+.split-item.saldo{background:linear-gradient(135deg,rgba(227,23,135,0.08),rgba(227,23,135,0.04));border:1px solid rgba(227,23,135,0.15);}
+.split-pct{font-family:'Playfair Display',serif;font-size:42px;font-weight:900;color:var(--roxo);line-height:1;}
+.split-item.saldo .split-pct{color:var(--rosa);}
+.split-label{font-size:13px;color:var(--texto2);margin-top:8px;font-weight:600;}
+.split-arrow{display:flex;align-items:center;justify-content:center;color:var(--texto2);font-size:20px;}
+
+.forma-card{background:var(--off-white);border-radius:14px;padding:20px 22px;margin-bottom:14px;display:flex;gap:16px;align-items:flex-start;}
+.forma-icone{font-size:24px;flex-shrink:0;}
+.forma-titulo{font-weight:700;font-size:15px;color:var(--texto);margin-bottom:4px;}
+.forma-desc{font-size:14px;color:var(--texto2);}
+
+.timeline{margin:24px 0;}
+.tl-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
+.tl-dot{width:32px;height:32px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;background:linear-gradient(135deg,var(--roxo),var(--rosa));color:#fff;}
+.tl-info .tl-title{font-size:14px;font-weight:700;color:var(--texto);}
+.tl-info .tl-desc{font-size:13px;color:var(--texto2);margin-top:2px;}
+
+.contato-box{background:var(--off-white);border-radius:16px;padding:24px;margin-top:32px;}
+.contato-box h3{font-size:16px;font-weight:700;margin-bottom:10px;color:var(--texto);}
+.contato-box a{color:var(--roxo);text-decoration:none;font-weight:600;}
+footer{text-align:center;padding:32px 24px;background:var(--texto);color:rgba(255,255,255,0.5);font-size:12px;}
+footer a{color:rgba(255,255,255,0.7);text-decoration:none;}
+
+@media(max-width:480px){
+  .split-visual{flex-direction:column;}
+  .split-arrow{transform:rotate(90deg);}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Condições de Pagamento</h1>
+  <p>Como funciona o pagamento do seu pedido</p>
+  <div class="voltar"><a href="index.html">← Voltar ao site</a></div>
+</header>
+
+<main>
+  <div class="atualizacao">Última atualização: julho de 2026</div>
+
+  <h2>Estrutura do pagamento</h2>
+  <p>O pagamento é dividido em duas etapas, garantindo segurança para ambas as partes durante a produção:</p>
+
+  <div class="split-visual">
+    <div class="split-item entrada">
+      <div class="split-pct">30%</div>
+      <div class="split-label">Entrada<br/>na confirmação do pedido</div>
+    </div>
+    <div class="split-arrow">→</div>
+    <div class="split-item saldo">
+      <div class="split-pct">70%</div>
+      <div class="split-label">Saldo<br/>antes do despacho</div>
+    </div>
+  </div>
+
+  <h2>Formas de pagamento</h2>
+
+  <div class="forma-card">
+    <span class="forma-icone">💠</span>
+    <div><div class="forma-titulo">PIX</div><div class="forma-desc">Forma de pagamento principal, com confirmação rápida.</div></div>
+  </div>
+  <div class="forma-card">
+    <span class="forma-icone">💳</span>
+    <div><div class="forma-titulo">Cartão de crédito ou débito</div><div class="forma-desc">Também aceito. A taxa da maquininha é repassada ao cliente.</div></div>
+  </div>
+
+  <h2>Como funciona na prática</h2>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-dot">1</div>
+      <div class="tl-info"><div class="tl-title">Arte aprovada</div><div class="tl-desc">Após aprovar a arte final do seu copo, você realiza o pagamento da entrada de 30%.</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">2</div>
+      <div class="tl-info"><div class="tl-title">Pedido entra em produção</div><div class="tl-desc">Com a entrada confirmada, iniciamos a produção — prazo de até 12 dias úteis.</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">3</div>
+      <div class="tl-info"><div class="tl-title">Pagamento do saldo</div><div class="tl-desc">Antes do despacho ou retirada, você paga os 70% restantes.</div></div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot">4</div>
+      <div class="tl-info"><div class="tl-title">Envio ou retirada</div><div class="tl-desc">Com o saldo confirmado, seu pedido é despachado ou liberado para retirada.</div></div>
+    </div>
+  </div>
+
+  <div class="contato-box">
+    <h3>Dúvidas sobre pagamento?</h3>
+    <p style="margin-bottom:0;">WhatsApp: <a href="https://wa.me/5535991425955">(35) 9 9142-5955</a><br/>E-mail: <a href="mailto:atendimento.mekmix@gmail.com">atendimento.mekmix@gmail.com</a></p>
+  </div>
+</main>
+
+<footer>
+  <span>© 2026 MekMix Serigrafia LTDA — <a href="index.html">Voltar ao site</a> · <a href="entrega.html">Política de entrega</a></span>
+</footer>
+
+</body>
+</html>
