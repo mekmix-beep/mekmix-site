@@ -142,16 +142,16 @@ header.scrolled{background:rgba(250,247,251,.97);border-bottom-color:var(--cinza
 /* ===== SEGMENTOS ===== */
 .segmentos{background:var(--off-white);padding:120px 0;}
 .seg-head{max-width:600px;margin-bottom:56px;}
-.seg-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
-.seg-card{aspect-ratio:3/4;border-radius:16px;overflow:hidden;position:relative;cursor:default;}
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.seg-card{aspect-ratio:4/5;border-radius:16px;overflow:hidden;position:relative;cursor:default;}
 .seg-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.4,0,.2,1);}
 .seg-card:hover img{transform:scale(1.08);}
 .seg-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(20,4,24,.82) 0%,rgba(20,4,24,.15) 45%,transparent 65%);}
 .seg-label{position:absolute;bottom:0;left:0;right:0;padding:18px 14px;z-index:1;}
 .seg-icon{font-size:20px;margin-bottom:6px;display:block;}
 .seg-name{color:#fff;font-size:13px;font-weight:700;line-height:1.25;}
-@media(max-width:900px){.seg-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:560px){.seg-grid{grid-template-columns:repeat(2,1fr);gap:10px;}}
+@media(max-width:900px){.seg-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:560px){.seg-grid{grid-template-columns:1fr;gap:10px;}}
 
 /* ===== GALERIA (estilo Apple, fundo escuro) ===== */
 .galeria{background:linear-gradient(160deg,var(--roxo-deep) 0%,#2A0A32 100%);padding:130px 0;position:relative;overflow:hidden;}
@@ -405,14 +405,10 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
     <div class="seg-grid">
       <div class="seg-card"><img src="img/copo-mekmix-cafeteria.jpg" alt="Copos para cafeterias"/><div class="seg-label"><span class="seg-icon">☕</span><span class="seg-name">Cafeterias</span></div></div>
       <div class="seg-card"><img src="img/copo-ironsmoke-burger.jpg" alt="Copos para hamburguerias"/><div class="seg-label"><span class="seg-icon">🍔</span><span class="seg-name">Hamburguerias</span></div></div>
-      <div class="seg-card"><img src="img/copo-skyline-rooftop.jpg" alt="Copos para rooftops"/><div class="seg-label"><span class="seg-icon">🍹</span><span class="seg-name">Rooftops</span></div></div>
+      <div class="seg-card"><img src="img/copo-distrito87-pub.jpg" alt="Copos para rooftops"/><div class="seg-label"><span class="seg-icon">🍹</span><span class="seg-name">Rooftops</span></div></div>
       <div class="seg-card"><img src="img/copo-pulse-festival.jpg" alt="Copos para eventos"/><div class="seg-label"><span class="seg-icon">🎵</span><span class="seg-name">Eventos</span></div></div>
-      <div class="seg-card"><img src="img/copo-distrito87-pub.jpg" alt="Copos para pubs"/><div class="seg-label"><span class="seg-icon">🍺</span><span class="seg-name">Pubs</span></div></div>
+      <div class="seg-card"><img src="img/copo-skyline-rooftop.jpg" alt="Copos para pubs"/><div class="seg-label"><span class="seg-icon">🍺</span><span class="seg-name">Pubs</span></div></div>
       <div class="seg-card"><img src="img/copo-urbanmarket-conv.jpg" alt="Copos para conveniências"/><div class="seg-label"><span class="seg-icon">🛒</span><span class="seg-name">Conveniências</span></div></div>
-      <div class="seg-card"><img src="img/copo-origem-cervejaria.jpg" alt="Copos para cervejarias"/><div class="seg-label"><span class="seg-icon">🍺</span><span class="seg-name">Cervejarias</span></div></div>
-      <div class="seg-card"><img src="img/copo-ironsmoke-burger.jpg" alt="Copos para restaurantes"/><div class="seg-label"><span class="seg-icon">🍽</span><span class="seg-name">Restaurantes</span></div></div>
-      <div class="seg-card"><img src="img/copo-mekmix-cafeteria.jpg" alt="Copos para açaí"/><div class="seg-label"><span class="seg-icon">🍧</span><span class="seg-name">Açaí</span></div></div>
-      <div class="seg-card"><img src="img/copo-urbanmarket-conv.jpg" alt="Copos para pizzarias"/><div class="seg-label"><span class="seg-icon">🍕</span><span class="seg-name">Pizzarias</span></div></div>
     </div>
   </div>
 </section>
