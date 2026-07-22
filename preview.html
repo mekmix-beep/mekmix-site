@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="description" content="MekMix Serigrafia — Copos descartáveis personalizados para bares, cervejarias, adegas e eventos. Serigrafia de alta qualidade. Pedido mínimo: 200 unidades."/>
+<title>MekMix Serigrafia — Copos Personalizados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--rosa:#E31787;--roxo:#772583;--roxo-dark:#5A1B66;--off-white:#F8F6FB;--cinza:#EDE8F5;--texto:#1A1A2E;--texto2:#5A5880;}
+html{scroll-behavior:smooth;}
+body{font-family:'Inter',sans-serif;color:var(--texto);background:#fff;overflow-x:hidden;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(119,37,131,0.1);padding:0 32px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s;}
+header.scrolled{box-shadow:0 4px 24px rgba(119,37,131,0.12);}
+.header-logo img{height:58px;width:auto;}
+.header-nav{display:flex;align-items:center;gap:10px;}
+.btn-nav{padding:10px 20px;border-radius:10px;font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;border:none;transition:all .25s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;}
+.btn-nav-ghost{color:var(--roxo);background:transparent;border:1.5px solid rgba(119,37,131,0.35);}
+.btn-nav-ghost::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(119,37,131,0.08),transparent);transition:left .4s;}
+.btn-nav-ghost:hover{border-color:var(--roxo);background:rgba(119,37,131,0.06);transform:translateY(-1px);box-shadow:0 4px 12px rgba(119,37,131,0.18);}
+.btn-nav-ghost:hover::after{left:100%;}
+.btn-nav-fill{background:linear-gradient(135deg,var(--rosa),#c4107a);color:#fff;box-shadow:0 4px 15px rgba(227,23,135,0.3);}
+.btn-nav-fill:hover{box-shadow:0 6px 22px rgba(227,23,135,0.5);transform:translateY(-2px);}
+.btn-nav-whatsapp{background:#25D366;color:#fff;display:flex;align-items:center;gap:6px;animation:wa-pulse 2.5s infinite;}
+.btn-nav-whatsapp:hover{background:#1da851;transform:translateY(-2px);}
+@keyframes wa-pulse{0%,100%{box-shadow:0 4px 12px rgba(37,211,102,0.3);}50%{box-shadow:0 4px 20px rgba(37,211,102,0.6);}}
+
+/* FAQ */
+.faq{background:var(--off-white);padding:90px 32px;}
+.faq-inner{max-width:760px;margin:0 auto;}
+.faq-tag{display:flex;align-items:center;gap:10px;justify-content:center;color:var(--rosa);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;}
+.faq-tag::before{content:'';width:28px;height:2px;background:var(--rosa);}
+.faq h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,44px);font-weight:900;text-align:center;color:var(--texto);margin-bottom:44px;}
+.faq-item{border-bottom:1px solid rgba(119,37,131,0.15);}
+.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;background:none;border:none;text-align:left;padding:22px 4px;cursor:pointer;font-family:inherit;font-size:16px;font-weight:600;color:var(--texto);}
+.faq-icon{flex-shrink:0;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(119,37,131,0.3);color:var(--rosa);display:flex;align-items:center;justify-content:center;font-size:18px;transition:transform .3s,background .3s;}
+.faq-item.active .faq-icon{background:var(--rosa);color:#fff;border-color:var(--rosa);transform:rotate(45deg);}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-answer p{padding:0 4px 22px;color:var(--texto2);font-size:15px;line-height:1.7;}
+.faq-answer strong{color:var(--roxo);}
+
+/* HERO */
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--roxo-dark) 0%,var(--roxo) 45%,var(--rosa) 100%);display:flex;align-items:center;justify-content:center;padding:88px 32px 56px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 80%,rgba(255,255,255,0.05) 0%,transparent 60%);}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:100px;background:linear-gradient(to bottom,transparent,var(--off-white));}
+.hero-inner{max-width:1100px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:1;}
+.hero-text h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,66px);font-weight:900;color:#fff;line-height:1.08;margin-bottom:18px;}
+.hero-text h1 em{font-style:normal;color:rgba(255,255,255,0.7);display:block;font-size:.58em;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px;}
+.hero-text p{font-size:16px;color:rgba(255,255,255,0.88);line-height:1.75;margin-bottom:36px;max-width:420px;}
+.hero-ctas{display:flex;flex-direction:column;gap:12px;max-width:380px;}
+.cta-btn{display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:14px;text-decoration:none;font-weight:600;font-size:15px;transition:all .25s;border:none;cursor:pointer;}
+.cta-btn-icon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+.cta-btn-text span{display:block;font-size:11px;font-weight:400;opacity:.75;}
+.cta-pedido{background:#fff;color:var(--roxo);box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.cta-pedido:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.2);}
+.cta-pedido .cta-btn-icon{background:var(--cinza);}
+.cta-cotacao{background:rgba(255,255,255,0.15);color:#fff;border:1.5px solid rgba(255,255,255,0.35);backdrop-filter:blur(8px);}
+.cta-cotacao:hover{background:rgba(255,255,255,0.25);transform:translateY(-3px);}
+.cta-cotacao .cta-btn-icon{background:rgba(255,255,255,0.2);}
+.cta-acompanhar{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.85);border:1.5px solid rgba(255,255,255,0.18);}
+.cta-acompanhar:hover{background:rgba(255,255,255,0.15);transform:translateY(-3px);}
+.cta-acompanhar .cta-btn-icon{background:rgba(255,255,255,0.12);}
+.hero-image{position:relative;display:flex;justify-content:center;}
+.hero-img-main{width:100%;max-width:560px;border-radius:24px;box-shadow:0 40px 90px rgba(0,0,0,0.4);transform:rotate(2deg);transition:transform .4s;display:block;}
+.hero-img-main:hover{transform:rotate(0deg) scale(1.02);}
+.hero-img-badge{
+  position:absolute;bottom:-16px;left:-16px;
+  background:#fff;border-radius:16px;padding:12px 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.2);
+  display:flex;align-items:center;gap:10px;font-size:13px;
+}
+.hero-img-badge strong{display:block;color:var(--texto);font-weight:700;}
+.hero-img-badge span{color:var(--texto2);font-size:11px;}
+.badge-icon{font-size:28px;}
+
+/* SEÇÕES */
+.section-inner{max-width:1100px;margin:0 auto;}
+.section-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--rosa);margin-bottom:12px;display:block;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:700;color:var(--texto);margin-bottom:48px;line-height:1.15;}
+
+/* DIFERENCIAIS */
+.diferenciais{background:var(--off-white);padding:90px 32px;}
+.diferenciais-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.dif-card{background:#fff;border-radius:18px;padding:28px 22px;border:1px solid rgba(119,37,131,0.08);transition:all .3s;position:relative;overflow:hidden;}
+.dif-card::before{content:'';position:absolute;top:-40px;right:-40px;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(227,23,135,0.08),transparent);transition:transform .4s;}
+.dif-card:hover{box-shadow:0 12px 40px rgba(119,37,131,0.13);transform:translateY(-4px);}
+.dif-card:hover::before{transform:scale(2);}
+.dif-icon{font-size:34px;margin-bottom:14px;display:block;}
+.dif-title{font-size:15px;font-weight:700;margin-bottom:7px;}
+.dif-desc{font-size:13px;color:var(--texto2);line-height:1.65;}
+
+/* NÚMEROS */
+.numeros{background:linear-gradient(135deg,var(--roxo-dark),var(--roxo));padding:64px 32px;}
+.numeros-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:32px;max-width:900px;margin:0 auto;text-align:center;}
+.numero-item .valor{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:#fff;line-height:1;}
+.numero-item .sufixo{font-size:28px;color:var(--rosa);}
+.numero-item .label{font-size:13px;color:rgba(255,255,255,0.75);margin-top:8px;}
+
+/* CATÁLOGO */
+.catalogo{padding:90px 32px;background:#fff;}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:40px;}
+.tab-btn{padding:10px 26px;border-radius:100px;border:2px solid var(--cinza);background:#fff;font-size:14px;font-weight:600;color:var(--texto2);cursor:pointer;transition:all .2s;}
+.tab-btn.active{background:linear-gradient(135deg,var(--roxo),var(--rosa));border-color:transparent;color:#fff;box-shadow:0 4px 14px rgba(119,37,131,0.3);}
+.tab-btn:hover:not(.active){border-color:var(--roxo);color:var(--roxo);}
+.produto-panel{display:none;}
+.produto-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.produto-foto{border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.12);position:relative;}
+.produto-foto img{width:100%;display:block;height:440px;object-fit:cover;transition:transform .4s;}
+.produto-foto:hover img{transform:scale(1.04);}
+.produto-foto::after{content:'✅ Produto real MekMix';position:absolute;bottom:12px;left:12px;background:rgba(0,0,0,0.6);color:#fff;font-size:11px;padding:4px 10px;border-radius:100px;backdrop-filter:blur(4px);}
+.produto-info h3{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;margin-bottom:8px;}
+.produto-badge{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--cinza),rgba(119,37,131,0.12));color:var(--roxo);font-size:12px;font-weight:600;padding:5px 14px;border-radius:100px;margin-bottom:22px;}
+.tabela-precos{width:100%;border-collapse:collapse;margin-bottom:24px;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.06);}
+.tabela-precos th{background:linear-gradient(135deg,var(--roxo),#8e2d9e);color:#fff;padding:12px 14px;font-size:12px;text-align:left;}
+.tabela-precos td{padding:13px 14px;font-size:13px;border-bottom:1px solid var(--cinza);background:#fff;transition:background .15s;}
+.tabela-precos tr:last-child td{border-bottom:none;}
+.tabela-precos tr:hover td{background:var(--off-white);}
+.preco-destaque{color:var(--rosa);font-weight:700;font-size:16px;}
+.faixa{color:var(--roxo);font-weight:600;}
+.produto-cta{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-pedir{padding:14px 30px;background:linear-gradient(135deg,var(--rosa),#c4107a);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s;display:inline-block;box-shadow:0 4px 16px rgba(227,23,135,0.35);}
+.btn-pedir:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(227,23,135,0.5);}
+.btn-cotar{padding:14px 30px;background:transparent;color:var(--roxo);border:2px solid var(--roxo);border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;text-decoration:none;transition:all .25s;display:inline-block;}
+.btn-cotar:hover{background:var(--roxo);color:#fff;transform:translateY(-2px);}
+
+/* GALERIA — mosaico escuro */
+.galeria{padding:90px 32px;background:linear-gradient(160deg,#1a0a2e 0%,var(--roxo-dark) 50%,#2d1040 100%);}
+.galeria .section-label{color:rgba(255,255,255,0.6);}
+.galeria .section-title{color:#fff;}
+.galeria-sub{color:rgba(255,255,255,0.7);font-size:15px;margin-top:-32px;margin-bottom:40px;}
+.galeria-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:16px;}
+.galeria-item{border-radius:18px;overflow:hidden;position:relative;}
+.galeria-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.galeria-item:hover img{transform:scale(1.08);}
+.galeria-item::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(90,27,102,0.5),transparent 60%);z-index:1;opacity:0;transition:opacity .3s;}
+.galeria-item:hover::before{opacity:1;}
+.galeria-item:nth-child(1){grid-row:span 2;}
+.galeria-item:nth-child(1) img{height:100%;}
+.galeria-aviso{
+  margin-top:20px;text-align:center;
+  color:rgba(255,255,255,0.5);font-size:12px;
+  border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;
+}
+
+/* COMO FUNCIONA */
+.como-funciona{padding:90px 32px;background:linear-gradient(160deg,var(--off-white) 0%,rgba(227,23,135,0.04) 100%);}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:48px;}
+.step{text-align:center;background:#fff;border-radius:20px;padding:32px 20px;border:1px solid rgba(119,37,131,0.08);transition:all .3s;}
+.step:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(119,37,131,0.1);}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--roxo),var(--rosa));color:#fff;font-family:'Playfair Display',serif;font-size:22px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 6px 20px rgba(119,37,131,0.35);}
+.step-title{font-size:16px;font-weight:700;margin-bottom:8px;}
+.step-desc{font-size:13px;color:var(--texto2);line-height:1.65;}
+
+/* DEPOIMENTOS */
+.depoimentos{padding:90px 32px;background:#fff;}
+.dep-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.dep-card{background:linear-gradient(160deg,var(--off-white),rgba(119,37,131,0.04));border-radius:20px;padding:28px;border:1px solid rgba(119,37,131,0.08);transition:all .3s;}
+.dep-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(119,37,131,0.1);}
+.dep-stars{color:var(--rosa);font-size:16px;margin-bottom:14px;letter-spacing:2px;}
+.dep-texto{font-size:14px;color:var(--texto);line-height:1.75;margin-bottom:20px;font-style:italic;}
+.dep-autor{display:flex;align-items:center;gap:12px;}
+.dep-av{width:44px;height:44px;border-radius:50%;border:2px solid var(--rosa);flex-shrink:0;}
+.dep-nome{font-size:14px;font-weight:700;}
+.dep-empresa{font-size:12px;color:var(--texto2);}
+
+/* CONTATO */
+.contato{padding:90px 32px;background:linear-gradient(135deg,var(--roxo-dark),var(--roxo));}
+.contato .section-title{color:#fff;}
+.contato .section-label{color:rgba(255,255,255,0.65);}
+.contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+.contato-info p{color:rgba(255,255,255,0.85);font-size:15px;line-height:1.8;margin-bottom:28px;}
+.contato-links{display:flex;flex-direction:column;gap:12px;}
+.contato-link{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.9);text-decoration:none;font-size:14px;padding:13px 16px;background:rgba(255,255,255,0.1);border-radius:12px;transition:all .2s;border:1px solid rgba(255,255,255,0.08);}
+.contato-link:hover{background:rgba(255,255,255,0.2);transform:translateX(4px);}
+.contato-link-icon{font-size:20px;flex-shrink:0;}
+.form-cotacao{background:#fff;border-radius:24px;padding:36px;box-shadow:0 24px 60px rgba(0,0,0,0.2);}
+.form-cotacao h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:24px;color:var(--texto);}
+.form-group{margin-bottom:16px;}
+.form-label{font-size:11px;font-weight:700;color:var(--texto2);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;}
+.form-input{width:100%;padding:13px 15px;border:1.5px solid var(--cinza);border-radius:10px;font-size:14px;font-family:'Inter',sans-serif;color:var(--texto);outline:none;transition:all .2s;}
+.form-input:focus{border-color:var(--roxo);box-shadow:0 0 0 3px rgba(119,37,131,0.1);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.btn-form-submit{width:100%;padding:15px;background:linear-gradient(135deg,var(--rosa),#c4107a);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;transition:all .25s;margin-top:8px;box-shadow:0 4px 16px rgba(227,23,135,0.3);}
+.btn-form-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(227,23,135,0.5);}
+
+/* REDES */
+.redes{padding:70px 32px;background:linear-gradient(160deg,var(--off-white),rgba(119,37,131,0.06));text-align:center;}
+.redes-titulo{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;margin-bottom:8px;}
+.redes-sub{color:var(--texto2);margin-bottom:36px;font-size:15px;}
+.redes-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;}
+.rede-item{display:flex;flex-direction:column;align-items:center;gap:10px;}
+.rede-btn{display:flex;align-items:center;gap:10px;padding:14px 26px;border-radius:14px;text-decoration:none;font-weight:600;font-size:14px;transition:all .25s;}
+.rede-instagram{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff;}
+.rede-instagram:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(220,39,67,0.4);}
+.rede-facebook{background:#1877F2;color:#fff;}
+.rede-facebook:hover{background:#0e5fd4;transform:translateY(-3px);box-shadow:0 8px 24px rgba(24,119,242,0.4);}
+.rede-tiktok{background:#000;color:#fff;}
+.rede-tiktok:hover{background:#222;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.4);}
+.rede-icone{width:32px;height:32px;transition:transform .25s;}
+.rede-item:hover .rede-icone{transform:scale(1.15);}
+
+/* FOOTER */
+footer{background:var(--texto);color:rgba(255,255,255,0.7);padding:56px 32px 24px;}
+.footer-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.footer-brand img{height:40px;margin-bottom:18px;filter:brightness(0) invert(1);}
+.footer-brand p{font-size:13px;line-height:1.8;max-width:280px;}
+.footer-col h4{color:#fff;font-size:12px;font-weight:700;margin-bottom:16px;text-transform:uppercase;letter-spacing:.8px;}
+.footer-col ul{list-style:none;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{color:rgba(255,255,255,0.6);text-decoration:none;font-size:13px;transition:color .2s;}
+.footer-col ul li a:hover{color:#fff;}
+.footer-bottom{max-width:1100px;margin:24px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-size:12px;}
+.footer-bottom a{color:rgba(255,255,255,0.45);text-decoration:none;}
+
+/* MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:1000;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(4px);}
+.modal-overlay.open{display:flex;}
+.modal-box{background:#fff;border-radius:24px;padding:36px;max-width:460px;width:100%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,0.3);}
+.modal-box h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;margin-bottom:8px;}
+.modal-box p{color:var(--texto2);font-size:14px;margin-bottom:24px;line-height:1.6;}
+.modal-close-btn{position:absolute;top:16px;right:20px;background:none;border:none;font-size:24px;cursor:pointer;color:var(--texto2);}
+.timeline{margin-top:20px;}
+.tl-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
+.tl-dot{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:2px;}
+.tl-dot.done{background:linear-gradient(135deg,var(--roxo),#8e2d9e);color:#fff;}
+.tl-dot.current{background:linear-gradient(135deg,var(--rosa),#c4107a);color:#fff;animation:tl-pulse 1.5s infinite;}
+.tl-dot.pending{background:var(--cinza);color:var(--texto2);}
+@keyframes tl-pulse{0%,100%{box-shadow:0 0 0 0 rgba(227,23,135,.4);}50%{box-shadow:0 0 0 10px rgba(227,23,135,0);}}
+.tl-info .tl-title{font-size:14px;font-weight:600;}
+.tl-info .tl-date{font-size:12px;color:var(--texto2);margin-top:2px;}
+
+/* FLOAT WA */
+.float-wa{position:fixed;bottom:28px;right:28px;z-index:200;background:#25D366;color:#fff;border-radius:50%;width:60px;height:60px;font-size:30px;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 6px 20px rgba(37,211,102,0.5);animation:wa-pulse 2.5s infinite;transition:transform .2s;}
+.float-wa:hover{transform:scale(1.12);}
+
+/* ── TABLET (≤ 900px) ── */
+@media(max-width:900px){
+  .hero-inner{gap:32px;}
+  .hero-img-main{max-width:440px;}
+  .diferenciais-grid{grid-template-columns:repeat(2,1fr);}
+  .steps{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+}
+
+/* ── MOBILE (≤ 768px) ── */
+@media(max-width:768px){
+  /* header */
+  header{padding:0 16px;height:60px;}
+  .header-logo img{height:44px;}
+  .header-nav .btn-nav-ghost{display:none;}
+
+  /* hero */
+  .hero{padding:76px 20px 48px;min-height:auto;}
+  .hero-inner{grid-template-columns:1fr;text-align:center;gap:28px;}
+  .hero-image{order:-1;justify-content:center;}
+  .hero-img-main{max-width:100%;border-radius:16px;transform:none;}
+  .hero-img-badge{display:none;}
+  .hero-ctas{max-width:100%;}
+  .hero-text p{max-width:100%;font-size:15px;}
+  .cta-btn{padding:14px 18px;}
+
+  /* numeros */
+  .numeros-grid{grid-template-columns:repeat(2,1fr);gap:16px;}
+
+  /* diferenciais */
+  .diferenciais-grid{grid-template-columns:repeat(2,1fr);}
+
+  /* catalogo */
+  .produto-panel.active{grid-template-columns:1fr;}
+  .produto-foto img{height:260px;}
+
+  /* galeria */
+  .galeria-grid{grid-template-columns:1fr 1fr;grid-auto-rows:auto;}
+  .galeria-item:nth-child(1){grid-row:span 1;grid-column:span 2;}
+  .galeria-item img{height:180px !important;object-fit:cover;}
+
+  /* steps */
+  .steps{grid-template-columns:1fr 1fr;gap:16px;}
+
+  /* contato */
+  .contato-grid{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+
+  /* redes */
+  .redes{padding:48px 20px;}
+
+  /* footer */
+  .footer-grid{grid-template-columns:1fr;gap:28px;}
+  .footer-bottom{flex-direction:column;text-align:center;gap:6px;}
+  footer{padding:40px 20px 20px;}
+}
+
+/* ── MOBILE PEQUENO (≤ 480px) ── */
+@media(max-width:480px){
+  /* header */
+  header{padding:0 12px;height:56px;}
+  .header-logo img{height:40px;}
+  .btn-nav{padding:8px 12px;font-size:12px;}
+
+  /* hero */
+  .hero{padding:68px 16px 40px;}
+  .hero-text h1{font-size:clamp(30px,8vw,44px);}
+  .hero-text p{font-size:14px;}
+  .hero-img-main{border-radius:12px;}
+  .cta-btn{font-size:14px;padding:13px 14px;}
+  .cta-btn-icon{width:36px;height:36px;font-size:18px;}
+
+  /* numeros */
+  .numeros-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .numero-item{padding:20px 12px;}
+  .numero-valor{font-size:28px;}
+
+  /* diferenciais */
+  .diferenciais-grid{grid-template-columns:1fr;}
+  .dif-card{padding:20px 16px;}
+
+  /* abas catalogo */
+  .produto-tabs{gap:6px;flex-wrap:wrap;justify-content:center;}
+  .tab-btn{padding:8px 14px;font-size:13px;}
+  .produto-foto img{height:220px;}
+
+  /* galeria */
+  .galeria-grid{grid-template-columns:1fr;}
+  .galeria-item:nth-child(1){grid-column:span 1;}
+  .galeria-item img{height:220px !important;}
+
+  /* steps */
+  .steps{grid-template-columns:1fr;gap:16px;}
+
+  /* redes */
+  .redes-links{flex-direction:column;align-items:center;}
+  .rede-btn{width:100%;max-width:280px;justify-content:center;}
+
+  /* modal */
+  .modal-box{padding:24px 18px;}
+
+  /* float wa */
+  .float-wa{bottom:20px;right:16px;width:52px;height:52px;font-size:26px;}
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <a href="#" class="header-logo">
+    <img src="https://placehold.co/400x400/eee/999?text=IMG" alt="MekMix Serigrafia"/>
+  </a>
+  <nav class="header-nav">
+    <a href="#catalogo" class="btn-nav btn-nav-ghost">Catálogo</a>
+    <a href="#como-funciona" class="btn-nav btn-nav-ghost">Como funciona</a>
+    <a href="#depoimentos" class="btn-nav btn-nav-ghost">Depoimentos</a>
+    <a href="#cotacao" class="btn-nav btn-nav-fill">Fazer pedido</a>
+    <a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-nav btn-nav-whatsapp">💬 WhatsApp</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1><em>MekMix Serigrafia</em>Sua marca em cada copo.</h1>
+      <p>Copos descartáveis transparentes personalizados em serigrafia para bares, cervejarias, adegas, açaí e eventos. Qualidade, prazo e preço direto da fábrica.</p>
+      <div class="hero-ctas">
+        <a href="#cotacao" class="cta-btn cta-pedido">
+          <div class="cta-btn-icon">🛒</div>
+          <div class="cta-btn-text">Fazer meu pedido<span>Já sei o que quero</span></div>
+        </a>
+        <a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="cta-btn cta-cotacao">
+          <div class="cta-btn-icon">💬</div>
+          <div class="cta-btn-text">Solicitar cotação<span>Quero falar com um vendedor</span></div>
+        </a>
+        <a href="#" onclick="abrirAcompanhar(event)" class="cta-btn cta-acompanhar">
+          <div class="cta-btn-icon">📦</div>
+          <div class="cta-btn-text">Acompanhar pedido<span>Rastrear meu pedido</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Copo descartável personalizado MekMix" class="hero-img-main"/>
+      <div class="hero-img-badge">
+        <span class="badge-icon">⭐</span>
+        <div>
+          <strong>+500 clientes</strong>
+          <span>em todo o Brasil</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais">
+  <div class="section-inner">
+    <span class="section-label">Por que a MekMix?</span>
+    <h2 class="section-title">Qualidade que fala por si mesma</h2>
+    <div class="diferenciais-grid">
+      <div class="dif-card"><span class="dif-icon">🖨️</span><div class="dif-title">Serigrafia profissional</div><div class="dif-desc">Impressão direta no copo com tinta de alta aderência. Não descasca, não desbota.</div></div>
+      <div class="dif-card"><span class="dif-icon">⚡</span><div class="dif-title">Prazo rápido</div><div class="dif-desc">Arte em até 2 dias úteis. Produção concluída em até 12 dias após aprovação.</div></div>
+      <div class="dif-card"><span class="dif-icon">🎨</span><div class="dif-title">Arte inclusa</div><div class="dif-desc">Nossa equipe cria ou adapta sua arte sem custo adicional.</div></div>
+      <div class="dif-card"><span class="dif-icon">📦</span><div class="dif-title">Pedido mínimo acessível</div><div class="dif-desc">Pedido mínimo de 200 unidades, com preços exclusivos a partir de 1 caixa. Condições especiais na compra de <strong>MIX DE CAIXAS</strong> em diferentes medidas (ml).</div></div>
+      <div class="dif-card"><span class="dif-icon">🏆</span><div class="dif-title">Direto da fábrica</div><div class="dif-desc">Sem intermediários. Preço justo, atendimento direto com quem produz.</div></div>
+      <div class="dif-card"><span class="dif-icon">🚚</span><div class="dif-title">Todo o Brasil</div><div class="dif-desc">Parcerias com transportadoras confiáveis ou você escolhe a sua.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="numeros">
+  <div class="numeros-grid">
+    <div class="numero-item"><div class="valor">+<span class="sufixo">500</span></div><div class="label">Clientes atendidos</div></div>
+    <div class="numero-item"><div class="valor"><span class="sufixo">12</span></div><div class="label">Dias úteis de produção</div></div>
+    <div class="numero-item"><div class="valor">+<span class="sufixo">2M</span></div><div class="label">Copos produzidos</div></div>
+    <div class="numero-item"><div class="valor"><span class="sufixo">3</span></div><div class="label">Anos de experiência</div></div>
+  </div>
+</section>
+
+<!-- CATÁLOGO -->
+<section class="catalogo" id="catalogo">
+  <div class="section-inner">
+    <span class="section-label">Catálogo de produtos</span>
+    <h2 class="section-title">Escolha seu tamanho</h2>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="switchTab(this,'330')">330ml</button>
+      <button class="tab-btn" onclick="switchTab(this,'400')">400ml</button>
+      <button class="tab-btn" onclick="switchTab(this,'500')">500ml</button>
+      <button class="tab-btn" onclick="switchTab(this,'770')">770ml</button>
+    </div>
+    <div id="tab-330" class="produto-panel active">
+      <div class="produto-foto"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Copo descartável 330ml personalizado"/></div>
+      <div class="produto-info"><h3>Copo 330ml</h3><span class="produto-badge">📦 1.000 unidades por caixa</span>
+        <table class="tabela-precos"><thead><tr><th>Qtd</th><th>Faixa</th><th>Valor/cx</th><th>Unit.</th></tr></thead>
+        <tbody><tr><td>1.000 un</td><td class="faixa">1–2 caixas</td><td>R$ 409,00</td><td class="preco-destaque">R$ 0,41</td></tr><tr><td>1.000 un</td><td class="faixa">3–4 caixas</td><td>R$ 369,00</td><td class="preco-destaque">R$ 0,37</td></tr><tr><td>1.000 un</td><td class="faixa">5+ caixas</td><td>R$ 339,00</td><td class="preco-destaque">R$ 0,34</td></tr></tbody></table>
+        <div class="produto-cta"><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-pedir">Fazer pedido</a><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-cotar">Pedir cotação</a></div>
+      </div>
+    </div>
+    <div id="tab-400" class="produto-panel">
+      <div class="produto-foto"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Copo descartável 400ml personalizado"/></div>
+      <div class="produto-info"><h3>Copo 400ml</h3><span class="produto-badge">📦 1.000 unidades por caixa</span>
+        <table class="tabela-precos"><thead><tr><th>Qtd</th><th>Faixa</th><th>Valor/cx</th><th>Unit.</th></tr></thead>
+        <tbody><tr><td>1.000 un</td><td class="faixa">1–2 caixas</td><td>R$ 489,00</td><td class="preco-destaque">R$ 0,49</td></tr><tr><td>1.000 un</td><td class="faixa">3–4 caixas</td><td>R$ 459,00</td><td class="preco-destaque">R$ 0,46</td></tr><tr><td>1.000 un</td><td class="faixa">5+ caixas</td><td>R$ 429,00</td><td class="preco-destaque">R$ 0,43</td></tr></tbody></table>
+        <div class="produto-cta"><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-pedir">Fazer pedido</a><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-cotar">Pedir cotação</a></div>
+      </div>
+    </div>
+    <div id="tab-500" class="produto-panel">
+      <div class="produto-foto"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Copo descartável 500ml personalizado"/></div>
+      <div class="produto-info"><h3>Copo 500ml</h3><span class="produto-badge">📦 1.000 unidades por caixa</span>
+        <table class="tabela-precos"><thead><tr><th>Qtd</th><th>Faixa</th><th>Valor/cx</th><th>Unit.</th></tr></thead>
+        <tbody><tr><td>1.000 un</td><td class="faixa">1–2 caixas</td><td>R$ 539,00</td><td class="preco-destaque">R$ 0,54</td></tr><tr><td>1.000 un</td><td class="faixa">3–4 caixas</td><td>R$ 489,00</td><td class="preco-destaque">R$ 0,49</td></tr><tr><td>1.000 un</td><td class="faixa">5+ caixas</td><td>R$ 449,00</td><td class="preco-destaque">R$ 0,45</td></tr></tbody></table>
+        <div class="produto-cta"><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-pedir">Fazer pedido</a><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-cotar">Pedir cotação</a></div>
+      </div>
+    </div>
+    <div id="tab-770" class="produto-panel">
+      <div class="produto-foto"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Copo descartável 770ml personalizado"/></div>
+      <div class="produto-info"><h3>Copo 770ml</h3><span class="produto-badge">📦 500 unidades por caixa</span>
+        <table class="tabela-precos"><thead><tr><th>Qtd</th><th>Faixa</th><th>Valor/cx</th><th>Unit.</th></tr></thead>
+        <tbody><tr><td>500 un</td><td class="faixa">1–2 caixas</td><td>R$ 449,00</td><td class="preco-destaque">R$ 0,90</td></tr><tr><td>500 un</td><td class="faixa">3–4 caixas</td><td>R$ 429,00</td><td class="preco-destaque">R$ 0,86</td></tr><tr><td>500 un</td><td class="faixa">5+ caixas</td><td>R$ 419,00</td><td class="preco-destaque">R$ 0,84</td></tr></tbody></table>
+        <div class="produto-cta"><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Quero%20fazer%20um%20pedido%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-pedir">Fazer pedido</a><a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="btn-cotar">Pedir cotação</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA — fundo escuro, fotos reais -->
+<section class="galeria">
+  <div class="section-inner">
+    <span class="section-label">Nossos trabalhos</span>
+    <h2 class="section-title">Sua marca impressa com precisão</h2>
+    <p class="galeria-sub">Adegas, Cervejarias Artesanais, Eventos e Bares que transformaram seus copos em identidade.</p>
+    <div class="galeria-grid">
+      <div class="galeria-item" style="grid-row:span 2;"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Chopp Kombita — Itajubá/MG — copo personalizado" style="height:100%;object-fit:cover;"/></div>
+      <div class="galeria-item"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Vila Cervejaria Artesanal — copo personalizado"/></div>
+      <div class="galeria-item"><img src="https://placehold.co/400x400/eee/999?text=IMG" alt="Cervejaria Lúpulo Artesanal — copo personalizado"/></div>
+      
+    </div>
+    <p class="galeria-aviso">📸 Todos os copos acima são 100% descartáveis transparentes personalizados em serigrafia pela MekMix Serigrafia</p>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como-funciona" id="como-funciona">
+  <div class="section-inner">
+    <span class="section-label">Processo</span>
+    <h2 class="section-title">Do pedido ao seu negócio em 4 passos</h2>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><div class="step-title">Faça seu pedido</div><div class="step-desc">Escolha o tamanho, quantidade e envie sua arte — ou solicite que criemos para você.</div></div>
+      <div class="step"><div class="step-num">2</div><div class="step-title">Aprovação da arte</div><div class="step-desc">Você recebe a arte em até 2 dias úteis para aprovar. Revisões sem custo adicional.</div></div>
+      <div class="step"><div class="step-num">3</div><div class="step-title">Produção</div><div class="step-desc">Após aprovação e entrada de 30% via PIX, produção concluída em até 12 dias úteis.</div></div>
+      <div class="step"><div class="step-num">4</div><div class="step-title">Entrega</div><div class="step-desc">Com o saldo de 70% confirmado, despachamos com a transportadora de sua preferência.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section class="depoimentos" id="depoimentos">
+  <div class="section-inner">
+    <span class="section-label">O que nossos clientes dizem</span>
+    <h2 class="section-title">Quem usa, aprova</h2>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Fizemos 3 caixas de 500ml para o nosso bar e ficamos impressionados com a qualidade. A arte ficou melhor do que esperávamos e os copos chegaram dentro do prazo. Já estamos no terceiro pedido!"</p>
+        <div class="dep-autor">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><circle cx='22' cy='22' r='22' fill='%23772583'/><text x='22' y='27' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>RA</text></svg>" alt="RA" class="dep-av"/>
+          <div><div class="dep-nome">Rodrigo Almeida</div><div class="dep-empresa">Bar do Rodrigo — BH/MG</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Atendimento rápido e eficiente. Enviei minha logo e em dois dias já tinha a arte pronta. Os copos chegaram dentro do prazo e com qualidade excelente. Super indico!"</p>
+        <div class="dep-autor">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><circle cx='22' cy='22' r='22' fill='%23E31787'/><text x='22' y='27' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>FO</text></svg>" alt="FO" class="dep-av"/>
+          <div><div class="dep-nome">Fernanda Oliveira</div><div class="dep-empresa">Eventos & Festas — SP/SP</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Já trabalhei com outras gráficas mas a MekMix se destaca pelo atendimento personalizado. Eles ajudam do início ao fim, da arte até a entrega. Super recomendo para cervejarias!"</p>
+        <div class="dep-autor">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><circle cx='22' cy='22' r='22' fill='%235A1B66'/><text x='22' y='27' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>CM</text></svg>" alt="CM" class="dep-av"/>
+          <div><div class="dep-nome">Carlos Mendonça</div><div class="dep-empresa">Cervejaria Artesanal — Curitiba/PR</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Perfeito para minha adega! Os copos de 330ml ficaram com a nossa marca bem nítida e os clientes adoram. Preço muito justo pelo que entregam. Voltarei com certeza!"</p>
+        <div class="dep-autor">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><circle cx='22' cy='22' r='22' fill='%23c4107a'/><text x='22' y='27' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>MS</text></svg>" alt="MS" class="dep-av"/>
+          <div><div class="dep-nome">Mariana Santos</div><div class="dep-empresa">Adega Premium — RJ/RJ</div></div>
+        </div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-stars">★★★★★</div>
+        <p class="dep-texto">"Fiz para o nosso açaí e ficou lindo! A impressão não desbota nem com gelo. Comunicação excelente durante todo o processo. A MekMix é referência em copos personalizados!"</p>
+        <div class="dep-autor">
+          <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'><circle cx='22' cy='22' r='22' fill='%238e2d9e'/><text x='22' y='27' font-family='Inter,sans-serif' font-size='14' font-weight='700' fill='white' text-anchor='middle'>DF</text></svg>" alt="DF" class="dep-av"/>
+          <div><div class="dep-nome">Diego Ferreira</div><div class="dep-empresa">Açaí do Diego — Goiânia/GO</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-tag">DÚVIDAS FREQUENTES</div>
+    <h2>Perguntas frequentes</h2>
+
+    <div class="faq-item active">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Qual o pedido mínimo?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Pedido mínimo de 200 unidades, com preços exclusivos a partir de 1 caixa. Condições especiais na compra de <strong>MIX DE CAIXAS</strong> em diferentes medidas (ml). Fale com um vendedor e monte a combinação ideal para o seu negócio.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Quanto tempo leva a produção?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>A arte fica pronta para aprovação em até 2 dias úteis. Após aprovada, a produção é concluída em até 12 dias úteis, e o prazo de entrega varia de acordo com a transportadora e sua região.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Vocês criam a arte do meu logo?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sim! Nossa equipe de design cria ou adapta a arte do seu logo para o copo sem custo adicional. Basta enviar sua marca ou ideia que cuidamos de todo o processo até a aprovação final.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Como acompanho meu pedido?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Após a confirmação, você recebe atualizações diretamente com nosso time de atendimento, incluindo a aprovação da arte, o início da produção e o código de rastreio assim que o pedido é despachado.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">
+        Entregam para todo o Brasil?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Sim, entregamos para todo o território nacional através de parcerias com transportadoras confiáveis. Você também pode optar por contratar sua própria transportadora, se preferir.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="contato" id="cotacao">
+  <div class="section-inner">
+    <span class="section-label">Fale com a gente</span>
+    <h2 class="section-title">Vamos criar algo incrível juntos?</h2>
+    <div class="contato-grid">
+      <div class="contato-info">
+        <p>Entre em contato pelo WhatsApp ou preencha o formulário. Nossa equipe responde com agilidade e o melhor orçamento para o seu negócio.</p>
+        <div class="contato-links">
+          <a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="contato-link"><span class="contato-link-icon">💬</span><span><strong style="color:#fff;">WhatsApp</strong><br/>(35) 9 9142-5955</span></a>
+          <a href="mailto:atendimento.mekmix@gmail.com" class="contato-link"><span class="contato-link-icon">✉️</span><span><strong style="color:#fff;">E-mail</strong><br/>atendimento.mekmix@gmail.com</span></a>
+          <a href="https://www.instagram.com/mekmix.serigrafia/" target="_blank" rel="noopener" class="contato-link"><span class="contato-link-icon">📷</span><span><strong style="color:#fff;">Instagram</strong><br/>@mekmix.serigrafia</span></a>
+          <div class="contato-link" style="cursor:default;"><span class="contato-link-icon">📍</span><span>Itajubá — MG · Entregamos para todo o Brasil</span></div>
+        </div>
+      </div>
+      <div class="form-cotacao">
+        <h3>Solicitar cotação</h3>
+        <div class="form-group"><label class="form-label">Nome / Empresa *</label><input class="form-input" id="f-nome" type="text" placeholder="Seu nome ou estabelecimento"/></div>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">WhatsApp *</label><input class="form-input" id="f-wapp" type="tel" placeholder="(00) 9 0000-0000"/></div>
+          <div class="form-group"><label class="form-label">Tamanho *</label><select class="form-input" id="f-tam"><option value="">Selecione</option><option>330ml</option><option>400ml</option><option>500ml</option><option>770ml</option><option>Mais de um tamanho</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">Quantidade *</label><select class="form-input" id="f-qtd"><option value="">Selecione</option><option>200 a 499 unidades</option><option>500 a 999 unidades</option><option>1.000 a 2.999 unidades</option><option>3.000 a 4.999 unidades</option><option>5.000+ unidades</option></select></div>
+        <div class="form-group"><label class="form-label">Arte</label><select class="form-input" id="f-arte"><option>Sim, tenho a arte pronta</option><option>Não, precisam criar para mim</option><option>Tenho logo, precisam adaptar</option></select></div>
+        <button class="btn-form-submit" onclick="enviarCotacao()">Enviar pelo WhatsApp →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REDES -->
+<section class="redes">
+  <div class="section-inner">
+    <h2 class="redes-titulo">Nos siga nas redes</h2>
+    <p class="redes-sub">Veja trabalhos, novidades e inspirações diárias</p>
+    <div class="redes-links">
+      <div class="rede-item">
+        <a href="https://www.instagram.com/mekmix.serigrafia/" target="_blank" rel="noopener" class="rede-btn rede-instagram">📷 @mekmix.serigrafia</a>
+        <a href="https://www.instagram.com/mekmix.serigrafia/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg class="rede-icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="25%" stop-color="#e6683c"/><stop offset="50%" stop-color="#dc2743"/><stop offset="75%" stop-color="#cc2366"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="24" height="24" rx="6" fill="url(#igGrad)"/><path d="M12 7.4a4.6 4.6 0 1 0 0 9.2 4.6 4.6 0 0 0 0-9.2zm0 7.6a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm4.8-7.8a1.08 1.08 0 1 1-2.16 0 1.08 1.08 0 0 1 2.16 0zM12 4.9c1.6 0 1.79.006 2.42.035.63.03 1.06.13 1.43.27.39.15.71.35 1.03.67.32.32.52.64.67 1.03.14.37.24.8.27 1.43.03.63.035.82.035 2.42s-.005 1.79-.035 2.42c-.03.63-.13 1.06-.27 1.43a2.88 2.88 0 0 1-.67 1.03c-.32.32-.64.52-1.03.67-.37.14-.8.24-1.43.27-.63.03-.82.035-2.42.035s-1.79-.005-2.42-.035c-.63-.03-1.06-.13-1.43-.27a2.88 2.88 0 0 1-1.03-.67 2.88 2.88 0 0 1-.67-1.03c-.14-.37-.24-.8-.27-1.43C5.905 13.79 5.9 13.6 5.9 12s.005-1.79.035-2.42c.03-.63.13-1.06.27-1.43.15-.39.35-.71.67-1.03.32-.32.64-.52 1.03-.67.37-.14.8-.24 1.43-.27C10.21 4.905 10.4 4.9 12 4.9z" fill="#fff"/></svg>
+        </a>
+      </div>
+      <div class="rede-item">
+        <a href="https://www.facebook.com/profile.php?id=61583394184985" target="_blank" rel="noopener" class="rede-btn rede-facebook">👍 MekMix Serigrafia</a>
+        <a href="https://www.facebook.com/profile.php?id=61583394184985" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg class="rede-icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#1877F2"/><path d="M15.5 8.5h-1.4c-.5 0-.7.25-.7.75v1.15h2.1l-.3 2.2h-1.8V19h-2.3v-6.4H9.4v-2.2h1.7V9.1c0-1.8 1.05-2.9 2.85-2.9h1.6v2.3z" fill="#fff"/></svg>
+        </a>
+      </div>
+      <div class="rede-item">
+        <a href="https://www.tiktok.com/@mekmixcopospersonalizado" target="_blank" rel="noopener" class="rede-btn rede-tiktok">🎵 @mekmixcopospersonalizado</a>
+        <a href="https://www.tiktok.com/@mekmixcopospersonalizado" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg class="rede-icone" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="6" fill="#000"/><path d="M15.6 5.5c.35.9 1.05 1.6 1.95 1.95.3.12.6.2.95.24v2.1a4.9 4.9 0 0 1-2.9-.95v4.9a4.15 4.15 0 1 1-3.6-4.12v2.15a2 2 0 1 0 1.5 1.94V5.5h2.1z" fill="#fff"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://placehold.co/400x400/eee/999?text=IMG" alt="MekMix Serigrafia"/>
+      <p>Especialistas em copos descartáveis transparentes personalizados em serigrafia. Qualidade, prazo e preço direto da fábrica para o seu negócio.</p>
+      <p style="margin-top:14px;font-size:12px;">CNPJ: 47.286.002/0001-52<br/>R. João Pullit, 340 — Morro Chic, Itajubá/MG — CEP 37.500-094</p>
+    </div>
+    <div class="footer-col"><h4>Navegação</h4><ul>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#como-funciona">Como funciona</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#cotacao">Solicitar cotação</a></li>
+      <li><a href="#" onclick="abrirAcompanhar(event)">Acompanhar pedido</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Políticas</h4><ul>
+      <li><a href="#">Política de privacidade</a></li>
+      <li><a href="#">Política de entrega</a></li>
+      <li><a href="#">Condições de pagamento</a></li>
+      <li><a href="#">LGPD</a></li>
+      <li><a href="mailto:atendimento.mekmix@gmail.com">atendimento.mekmix@gmail.com</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 MekMix Serigrafia LTDA — Todos os direitos reservados</span>
+    <span><a href="#">Política de privacidade</a> · <a href="#">LGPD</a></span>
+  </div>
+</footer>
+
+<!-- MODAL ACOMPANHAR -->
+<div class="modal-overlay" id="modal-acompanhar">
+  <div class="modal-box">
+    <button class="modal-close-btn" onclick="fecharModal()">×</button>
+    <h3>Acompanhar pedido</h3>
+    <p>Digite o número do seu pedido, enviado por WhatsApp ao confirmar a compra.</p>
+    <div class="form-group"><label class="form-label">Número do pedido</label><input class="form-input" id="track-num" type="text" placeholder="Ex: PED-2025-0042"/></div>
+    <button class="btn-form-submit" onclick="buscarPedido()">Consultar</button>
+    <div id="track-result" class="timeline" style="display:none;">
+      <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-info"><div class="tl-title">Pedido recebido</div><div class="tl-date">15/07/2025</div></div></div>
+      <div class="tl-item"><div class="tl-dot done">✓</div><div class="tl-info"><div class="tl-title">Arte aprovada</div><div class="tl-date">17/07/2025</div></div></div>
+      <div class="tl-item"><div class="tl-dot current">⚙</div><div class="tl-info"><div class="tl-title">Em produção</div><div class="tl-date">Previsão: 01/08/2025</div></div></div>
+      <div class="tl-item"><div class="tl-dot pending">○</div><div class="tl-info"><div class="tl-title">Saiu para entrega</div><div class="tl-date">—</div></div></div>
+      <div class="tl-item"><div class="tl-dot pending">○</div><div class="tl-info"><div class="tl-title">Entregue</div><div class="tl-date">—</div></div></div>
+    </div>
+  </div>
+</div>
+
+<a href="https://wa.me/5535991425955?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20cota%C3%A7%C3%A3o%20de%20copos%20personalizados." target="_blank" rel="noopener" class="float-wa" title="Fale conosco pelo WhatsApp">💬</a>
+
+<script>
+function toggleFaq(btn){var item=btn.parentElement;var answer=item.querySelector('.faq-answer');var wasActive=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active');i.querySelector('.faq-answer').style.maxHeight=null;});if(!wasActive){item.classList.add('active');answer.style.maxHeight=answer.scrollHeight+'px';}}
+document.addEventListener('DOMContentLoaded',function(){var first=document.querySelector('.faq-item.active .faq-answer');if(first)first.style.maxHeight=first.scrollHeight+'px';});
+function switchTab(btn,size){document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});document.querySelectorAll('.produto-panel').forEach(function(p){p.classList.remove('active');});btn.classList.add('active');document.getElementById('tab-'+size).classList.add('active');}
+function enviarCotacao(){var nome=document.getElementById('f-nome').value.trim();var wapp=document.getElementById('f-wapp').value.trim();var tam=document.getElementById('f-tam').value;var qtd=document.getElementById('f-qtd').value;var arte=document.getElementById('f-arte').value;if(!nome||!wapp||!tam||!qtd){alert('Preencha todos os campos obrigatórios.');return;}var msg='Olá! Solicito uma cotação:%0A%0A'+'👤 '+encodeURIComponent(nome)+'%0A'+'📱 '+encodeURIComponent(wapp)+'%0A'+'🥤 Tamanho: '+encodeURIComponent(tam)+'%0A'+'📦 Quantidade: '+encodeURIComponent(qtd)+'%0A'+'🎨 Arte: '+encodeURIComponent(arte);window.open('https://wa.me/5535991425955?text='+msg,'_blank');}
+function abrirAcompanhar(e){if(e)e.preventDefault();document.getElementById('modal-acompanhar').classList.add('open');document.getElementById('track-result').style.display='none';document.getElementById('track-num').value='';}
+function fecharModal(){document.getElementById('modal-acompanhar').classList.remove('open');}
+function buscarPedido(){var n=document.getElementById('track-num').value.trim();if(!n){alert('Digite o número do pedido.');return;}document.getElementById('track-result').style.display='block';}
+document.getElementById('modal-acompanhar').addEventListener('click',function(e){if(e.target===this)fecharModal();});
+window.addEventListener('scroll',function(){document.getElementById('site-header').classList.toggle('scrolled',window.scrollY>20);});
+</script>
+</body>
+</html>
