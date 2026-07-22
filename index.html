@@ -173,6 +173,13 @@ header.scrolled{background:rgba(250,247,251,.97);border-bottom-color:var(--cinza
   .gal-item{height:260px;}
 }
 
+/* ===== CTA CATÁLOGO (dentro da galeria) ===== */
+.gal-cta{margin-top:56px;position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;padding:40px 44px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(6px);}
+.gal-cta-text h3{font-family:var(--serif);font-weight:600;font-size:clamp(21px,2.4vw,28px);color:#fff;margin-bottom:8px;line-height:1.25;}
+.gal-cta-text p{font-size:14.5px;color:rgba(255,255,255,.68);max-width:460px;line-height:1.6;}
+.gal-cta .btn-primary{flex-shrink:0;}
+@media(max-width:700px){.gal-cta{padding:32px 26px;text-align:center;justify-content:center;}.gal-cta-text p{max-width:100%;}}
+
 /* ===== DIFERENCIAIS ===== */
 .diferenciais{background:var(--off-white);padding:120px 0;}
 .dif-head{max-width:560px;margin-bottom:60px;}
@@ -339,24 +346,24 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
   <div class="wrap">
     <div class="tamanhos-grid">
       <div class="tam-item">
-        <img src="img/copo-origem-cervejaria.jpg" alt="Copo personalizado 330ml"/>
+        <img src="img/copo-tamanho-330ml-acai.jpg" alt="Copo personalizado 330ml para açaí"/>
         <div class="tam-size">330ml</div>
-        <div class="tam-sub">Cafés e degustações</div>
+        <div class="tam-sub">Açaís e restaurantes</div>
       </div>
       <div class="tam-item">
-        <img src="img/copo-distrito87-pub.jpg" alt="Copo personalizado 400ml"/>
+        <img src="img/copo-tamanho-400ml-chopp.jpg" alt="Copo personalizado 400ml para chopp"/>
         <div class="tam-size">400ml</div>
-        <div class="tam-sub">Bares e restaurantes</div>
+        <div class="tam-sub">Chopp e bares</div>
       </div>
       <div class="tam-item">
-        <img src="img/copo-skyline-rooftop.jpg" alt="Copo personalizado 500ml"/>
+        <img src="img/copo-tamanho-500ml-eventos.jpg" alt="Copo personalizado 500ml para eventos"/>
         <div class="tam-size">500ml</div>
-        <div class="tam-sub">Cervejas e drinks</div>
+        <div class="tam-sub">Festivais e cervejarias</div>
       </div>
       <div class="tam-item">
-        <img src="img/copo-pulse-festival.jpg" alt="Copo personalizado 770ml"/>
+        <img src="img/copo-tamanho-770ml-conveniencia.jpg" alt="Copo personalizado 770ml para conveniência"/>
         <div class="tam-size">770ml</div>
-        <div class="tam-sub">Eventos e festivais</div>
+        <div class="tam-sub">Conveniência e adegas</div>
       </div>
     </div>
   </div>
@@ -416,7 +423,7 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
 <section class="galeria">
   <div class="wrap">
     <div class="gal-head">
-      <span class="eyebrow">Trabalhos reais</span>
+      <span class="eyebrow">Aplicações por segmento</span>
       <h2 class="headline">Cada copo, uma marca com identidade própria.</h2>
     </div>
     <div class="gal-grid">
@@ -425,6 +432,16 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
       <div class="gal-item"><img src="img/copo-ironsmoke-burger.jpg" alt="Copo personalizado para hamburgueria"/></div>
       <div class="gal-item"><img src="img/copo-skyline-rooftop.jpg" alt="Copo personalizado para rooftop bar"/></div>
       <div class="gal-item"><img src="img/copo-origem-cervejaria.jpg" alt="Copo personalizado para cervejaria"/></div>
+    </div>
+    <div class="gal-cta">
+      <div class="gal-cta-text">
+        <h3>Veja o catálogo completo, separado por segmento.</h3>
+        <p>Dezenas de aplicações em cervejarias, bares, hamburguerias, cafeterias, conveniências e eventos — para você visualizar possibilidades de como sua marca pode ficar impressa. Imagens ilustrativas.</p>
+      </div>
+      <a href="catalogo.html" class="btn-primary">
+        Explorar catálogo
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
     </div>
   </div>
 </section>
@@ -440,7 +457,7 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
       <div class="dif-card"><div class="dif-icon">⚡</div><div class="dif-title">Produção rápida</div><div class="dif-desc">Arte aprovada em até 48h, produção concluída em poucos dias úteis.</div></div>
       <div class="dif-card"><div class="dif-icon">🖨️</div><div class="dif-title">Serigrafia profissional</div><div class="dif-desc">Impressão direta com tinta de alta aderência. Não descasca, não desbota.</div></div>
       <div class="dif-card"><div class="dif-icon">💬</div><div class="dif-title">Atendimento especializado</div><div class="dif-desc">Um vendedor dedicado do orçamento à entrega, sem robôs no meio do caminho.</div></div>
-      <div class="dif-card"><div class="dif-icon">📦</div><div class="dif-title">Pedido mínimo acessível</div><div class="dif-desc">Condições especiais para pequenos e grandes volumes, com escala de desconto.</div></div>
+      <div class="dif-card"><div class="dif-icon">📦</div><div class="dif-title">Pedido mínimo de 200 unidades</div><div class="dif-desc">Preços exclusivos a partir de 1 caixa, com condição especial para mix de tamanhos.</div></div>
       <div class="dif-card"><div class="dif-icon">🚚</div><div class="dif-title">Entrega para todo Brasil</div><div class="dif-desc">Parcerias com transportadoras confiáveis ou a transportadora da sua escolha.</div></div>
       <div class="dif-card"><div class="dif-icon">✨</div><div class="dif-title">Layout exclusivo</div><div class="dif-desc">Sua arte, sua identidade — nunca reaproveitamos modelo de outro cliente.</div></div>
     </div>
@@ -483,7 +500,7 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Qual o pedido mínimo? <span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Trabalhamos com pedido mínimo acessível a partir de 1 caixa. Fale com um vendedor para condições especiais em grandes volumes.</p></div>
+      <div class="faq-a"><p>Pedido mínimo de 200 unidades. Preços exclusivos a partir de 1 caixa, com condição especial para compra de mix de caixas em medidas (ml) variadas no mesmo pedido.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Quanto tempo leva a produção? <span class="faq-icon">+</span></button>
@@ -492,6 +509,10 @@ footer{background:var(--roxo-deep);color:rgba(255,255,255,.6);padding:72px 0 28p
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Vocês criam a arte do meu logo? <span class="faq-icon">+</span></button>
       <div class="faq-a"><p>Sim. Nossa equipe cria ou adapta sua arte sem custo adicional. Você só precisa enviar a ideia ou o logo em qualquer formato.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">Quais cores de impressão estão disponíveis? <span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Trabalhamos com silk nas cores preto, branco, vermelho, verde e azul. A impressão pode ser feita em apenas uma face ou em frente e verso, conforme a necessidade da sua arte.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">Como acompanho meu pedido? <span class="faq-icon">+</span></button>
